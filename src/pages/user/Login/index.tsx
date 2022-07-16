@@ -12,9 +12,9 @@ import {
   ProFormCheckbox,
   ProFormText,
 } from '@ant-design/pro-components';
-import { Alert, message, Tabs } from 'antd';
+import { Alert, Divider, message, Space, Tabs } from 'antd';
 import React, { useState } from 'react';
-import { history, useModel } from 'umi';
+import { history, Link, useModel } from 'umi';
 import styles from './index.less';
 import { SYSTEM_LOGO,PLANET_LINK } from '@/constants';
 
@@ -197,9 +197,13 @@ const Login: React.FC = () => {
               marginBottom: 24,
             }}
           >
+            <Space split={<Divider type='vertical'/>}>
             <ProFormCheckbox noStyle name="autoLogin">
               自动登录
             </ProFormCheckbox>
+
+            <Link to="/user/register">新用户注册</Link>
+
             <a
               style={{
                 float: 'right',
@@ -207,9 +211,11 @@ const Login: React.FC = () => {
               href={PLANET_LINK}
               target="_blank" rel="noreferrer"
             >
-              忘记密码请联系鱼皮
+              忘记密码
             </a>
+            </Space>
           </div>
+          
         </LoginForm>
       </div>
       <Footer />
