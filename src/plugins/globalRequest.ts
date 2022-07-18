@@ -13,7 +13,8 @@ import { message } from 'antd';
   */
  const request = extend({
    credentials: 'include', // 默认请求是否带上cookie
-   prefix: process.env.NODE_ENV === 'production' ? 'http://user-backend.code-nav.cn': undefined
+  //  prefix: process.env.NODE_ENV === 'production' ? 'http://user-backend.code-nav.cn': undefined
+  prefix: process.env.NODE_ENV === 'production' ? 'http://101.200.164.72:8080': undefined
    // requestType: 'form',
  });
   
